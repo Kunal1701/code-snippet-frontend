@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CodeFormPage from "./pages/CodeFormPage";
+import CodeEntriesPage from "./pages/CodeEntriesPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<CodeFormPage />} />
+        <Route path="/entries" element={<CodeEntriesPage />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
